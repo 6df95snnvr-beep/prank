@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>جاري الاتصال...</title>
+<style>
+  body{margin:0;height:100vh;display:flex;flex-direction:column;
+       align-items:center;justify-content:center;
+       font-family:sans-serif;background:#111;color:#fff}
+  .spinner{width:60px;height:60px;border:6px solid #333;
+           border-top-color:#0af;border-radius:50%;
+           animation:spin 1s linear infinite;margin-bottom:20px}
+  @keyframes spin{to{transform:rotate(360deg)}}
+</style>
+</head>
+<body>
+  <div class="spinner"></div>
+  <h2>جاري الاتصال بالخادم...</h2>
+  <p>لا تغلق الصفحة</p>
+  <script>
+    setTimeout(()=>{
+      document.querySelector('h2').textContent = '⚠️ فشل الاتصال';
+      document.querySelector('p').textContent = 'تحقق من اتصالك بالإنترنت';
+      document.querySelector('.spinner').style.display='none';
+    }, 10000);
+  </script>
+</body>
+</html>
